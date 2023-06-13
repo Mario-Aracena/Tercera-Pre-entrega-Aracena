@@ -13,4 +13,4 @@ class MaestroTKD(models.Model):
 class TutorAlumno(models.Model):
     Nombre = models.CharField(max_length=30)
     Email = models.EmailField()
-    Fono =models.IntegerField(9)
+    Fono =models.IntegerField(default=10)
