@@ -2,15 +2,15 @@ from django.db import models
 
 # Create your models here.
 class Alumno(models.Model):
-    NombreCompleto = models.CharField(max_length=25)
-    GradoCinturon = models.IntegerField()
+    Nombre = models.CharField(max_length=25)
+    Grado = models.CharField(max_length=15)
 
 class MaestroTKD(models.Model):
-    NombreCompleto = models.CharField(max_length=25)
-    GradoCinturon = models.IntegerField()
-    Emailmaestro = models.EmailField()
+    Nombre = models.CharField(max_length=25)
+    Grado = models.CharField(max_length=15)
+    Email = models.EmailField()
 
 class TutorAlumno(models.Model):
-    Nombretutor = models.CharField(max_length=30)
-    Emailtutor = models.EmailField()
-    Fonotutor =models.BigIntegerField(9)
+    Nombre = models.CharField(max_length=30)
+    Email = models.EmailField()
+    Fono =models.IntegerField(9)
