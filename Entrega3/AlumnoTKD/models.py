@@ -5,6 +5,6 @@ from django.db import models
 class Alumno(models.Model):
     Nombre = models.CharField(max_length=25)
     Apellido = models.CharField(max_length=25)
-    Email = models.EmailField()
+    Email = models.EmailField(max_length=40)
 
 

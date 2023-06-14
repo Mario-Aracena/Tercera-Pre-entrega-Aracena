@@ -24,3 +24,5 @@ urlpatterns = [
     path('', include('Home.urls')),
     path('', include('AlumnoTKD.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
