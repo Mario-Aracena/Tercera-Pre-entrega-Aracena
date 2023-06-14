@@ -20,7 +20,7 @@ from AlumnoTKD import views
 urlpatterns = [
     path('alumnos/', views.ListadoAlumnos.as_view(), name='listar_alumnos'),
     path('crear-alumno/', views.CrearAlumnos.as_view(), name='crear_alumnos'),
-    path('editar-alumno/', views.EditarAlumnos.as_view(), name='editar_alumnos'),
-    path('eliminar-alumno/', views.EliminarAlumnos.as_view(), name='eliminar_alumnos'),
-    path('buscar-alumno/', views.BuscarAlumnos.as_view(), name='buscar_alumnos'),
+    path('editar-alumno/<int:pk>/', views.EditarAlumnos.as_view(), name='editar_alumnos'),
+    path('eliminar-alumno/<int:pk>/', views.EliminarAlumnos.as_view(), name='eliminar_alumnos'),
+    path('buscar-alumno/<int:pk>/', views.BuscarAlumnos.as_view(), name='buscar_alumnos'),
 ]
