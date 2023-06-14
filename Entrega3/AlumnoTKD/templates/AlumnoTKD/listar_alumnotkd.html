@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Alumnos {% endblock title %}
+
+{% block main %}
+    <div>
+        {% if perms.AlumnoTKD.add_movie %}
+            <a href="{% url 'crear_alumnos' %}" class="m-2 btn btn-primary">Crear alumno</a>
+        {% endif %}
+    </div>
+    {% if object_list %}
+        <div class="row">
+            {% for AlumnoTKD in object_list %}
+                <div class="card m-2" style="width: 18rem;" >
+                    <div class="card-body">
+                    <h5 class="card-title">{{ Alumno.nombre }} {{ Alumno.apellido }}</h5>
+                    <p class="card-text">email: {{ Alumno.email }}</p>
+                    <a href="{% url 'buscar_alumnos' AlumnoTKD.id %}" class="btn btn-primary">Ver</a>
+                    {% if perms.AlumnoTKD.change_movie %}
+                        <a href="{% url 'editar_alumnos' AlumnosTKD.id %}" class="btn btn-primary">Editar</a>
+                    {% endif %}
+                    {% if perms.AlumnoTKD.delete_movie %}
+                        <a href="{% url 'eliminar_alumnos' AlumnosTKD.id %}" class="btn btn-primary">Borrar</a>
+                    {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card" style="width: 18rem;" >
+            <div class="card-body">
+                <p class="card-text">No se encontraron datos.</p>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock main %}
